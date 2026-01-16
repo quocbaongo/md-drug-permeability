@@ -35,6 +35,7 @@ The workflow follows a pipeline of **Parameterization → Validation → Product
 └── analysis/
     ├── calc_logP.py                   # Script for partition coefficient
     └── calc_permeability.py           # Script for ISD integration
+```
 ## Detailed Workflow
 
 ### 1. Drug Molecule Parameterization
