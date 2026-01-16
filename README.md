@@ -54,17 +54,13 @@ This repository provides a reproducible computational workflow for theoretically
 
 See [`Parameterization-workflow.sh`](Parameterization-workflow.sh)
 
-This script guides through:
+This script guides through generating simulation parameters for the researched drug molecule. The procedure involves:
+- Charge Derivation: Assigning partial atomic charges using Quantum Mechanical (QM) methods. 
+- Topology Generation: Deriving bonded parameters using the General Amber Force Field (GAFF).
 
-- 3D structure preparation (RDKit or manual)
-- Geometry optimization + HF/6-31G* ESP calculation in Gaussian 16
-- RESP charge fitting
-- GAFF parameter assignment using `antechamber` and `parmchk2`
-- Conversion to GROMACS format (via acpype or parmed)
+### 2. Water–Octanol Partitioning
 
-### 2. Water–Octanol Partition Coefficient (Validation)
-
-Solvation free energy difference is used to compute:
+Basic validation of the simulation parameters can be performed by reproducing the experimental water-octanol partition coefficient (logP). The estimation of drug molecule's logP value requires the computation of its solvation free energies in water (ΔGw​) and octanol (ΔGo​). The partition coefficient is calculated as:
 
 $$
 \log_{10} P_{ow} = \frac{\Delta G^\circ_\text{water} - \Delta G^\circ_\text{octanol}}{RT \ln(10)}
@@ -75,7 +71,15 @@ where
 - $T = 298$ K (standard)  
 - $\ln(10) \approx 2.302585$
 
-Typical methods: thermodynamic integration (TI) or Bennett Acceptance Ratio (BAR) in explicit solvent.
+
+
+
+
+
+
+
+
+
 
 ### 3. Membrane Permeability Coefficient
 
