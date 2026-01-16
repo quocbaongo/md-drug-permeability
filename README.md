@@ -21,20 +21,24 @@ The workflow follows a pipeline of **Parameterization → Validation → Product
 ## Repository Structure (suggested / typical layout)
 
 ```text
-├── parameters/
-│   ├── Parameterization-workflow.sh   # Master script for topology generation
-│   ├── YT0.mol2                       # Initial ligand structure
-│   └── logs/                          # Gaussian QM logs
-├── validation/
-│   ├── water/                         # Solvation free energy in water
-│   └── octanol/                       # Solvation free energy in octanol
-├── membrane_sim/
-│   ├── top/                           # System topology
-│   ├── traj/                          # Trajectory files (excluded from git)
-│   └── wham/                          # Windows for Umbrella Sampling
-└── analysis/
-    ├── calc_logP.py                   # Script for partition coefficient
-    └── calc_permeability.py           # Script for ISD integration
+├── Drug-molecule-parameters/				# Generating simulation parameters for researched drug molecule
+│   ├── Drug_molecule_structure/			# Structure of drug molecule "YT0_H.mol2" in .mol2 format
+│   ├── Parameterization_workflow/
+│   	├── Parameterization-workflow.sh		# Description of generating simulation parameters for drug molecule using Ambertools and Gaussian softwares
+│   	├── 1.Geometry_optimization/
+│   	├── 2.ESP-charges-calculation/
+│   	├── 3.RESP-calculation/
+│   	└── 4.Drug_Gromacs_parameters/
+│
+├── Water-octanol-partitioning/				# Validating generated simulation parameters   	
+│   ├── logP-thermodynamics-cycle.pptx			# Theoretical background underlying logP computation
+│   ├── Water_hydration/
+│   	└── Simulation_workflow.sh			# Detailed illustration of the solvation free energy for the drug in water 
+│   └── Octanol_hydration
+│   	└── Simulation_workflow.sh			# Detailed illustration of the solvation free energy for the drug in octanol
+│
+├── Resistance-permeation-computation/			# Estimating permeability coefficient of the researched drug molecule
+└── solvent-to-membrane-thermodynamics-cycle.pptx	# Theoretical background underlying the resistance permation computation
 ```
 ## Detailed Workflow
 
