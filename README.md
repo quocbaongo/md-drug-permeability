@@ -20,6 +20,7 @@ The workflow follows a pipeline of **Parameterization → Validation → Product
 
 ## Repository Structure (suggested / typical layout)
 
+```text
 ├── parameters/
 │   ├── Parameterization-workflow.sh   # Master script for topology generation
 │   ├── YT0.mol2                       # Initial ligand structure
