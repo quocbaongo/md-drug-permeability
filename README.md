@@ -76,12 +76,13 @@ where
 This section provides the workflow for computing the permeability coefficient of the drug molecule passing through a lipid bilayer membrane. Here, we utilize the Inhomogeneous Solubility-Diffusion (ISD) model. The total resistance to permeation (R) is derived by integrating the local resistance across the membrane, which is placed perpendicular to z-axis:
 
 $$
-R = \frac{1}{P} = (number of layers) \times \int_{z_1}^{z_2} \frac{e^{\beta \Delta G_\text{rel, water}(z)}}{D(z)}\ \text{d}z
+R = \frac{1}{P} = N \times \int_{z_1}^{z_2} \frac{e^{\beta \Delta G_\text{rel, water}(z)}}{D(z)}\ \text{d}z
 $$
 
 where  
 - $\beta = 1/(k_B T)$  
-- $\Delta G_\text{rel, water}(z)$ = potential of mean force relative to bulk water  
-- $D(z)$ = local diffusion coefficient along the membrane normal  
-- The factor $(30 \pm 6)$ is an empirical prefactor (in s/m or equivalent units after calibration; commonly used in recent literature)
+- $\Delta G_\text{rel, water}(z)$ is the Potential of Mean Force (free energy profile) relative to the hydration free energy.
+- $D(z)$ is the local diffusion coefficient profile across the membrane. 
+- N is the number of the lipid bilayers.
+- P is the permeability coefficient.
 
