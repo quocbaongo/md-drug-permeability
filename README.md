@@ -1,14 +1,13 @@
 # Drug Permeability Estimation via Molecular Dynamics Simulations
 
-This repository provides a complete, reproducible computational workflow for theoretically estimating the **permeability coefficient** of small drug-like molecules across lipid bilayer membranes using **molecular dynamics (MD) simulations**.
+This repository provides a reproducible computational workflow for theoretically estimating the **permeability coefficient** of small drug-like molecules across a lipid bilayer membrane structure using **molecular dynamics (MD) simulations**.
 
-The workflow covers three main stages:
+The workflow follows a pipeline of **Parameterization → Validation → Production**. The Inhomogeneous Solubility-Diffusion (ISD) model was used to compute permeation resistance across the lipid bilayer, using the drug molecule **YT0** (RCSB Ligand ID: [YT0](https://www.rcsb.org/ligand/YT0)) as the primary case study.
 
-1. Deriving and parameterizing the drug molecule for MD simulations  
-2. Validating the parameters by computing the octanol–water partition coefficient (log Pₒw)  
-3. Computing the membrane permeability coefficient via free energy and diffusion profiles  
 
-The example molecule used throughout is **YT0** (RCSB Ligand ID: [YT0](https://www.rcsb.org/ligand/YT0)).
+
+
+
 
 ## Workflow Overview
 
@@ -21,18 +20,19 @@ The example molecule used throughout is **YT0** (RCSB Ligand ID: [YT0](https://w
 3. **Permeability Coefficient Calculation**  
    Perform umbrella sampling across a lipid bilayer → reconstruct PMF (ΔG(z)) → compute local diffusion coefficients D(z) → integrate to obtain permeation resistance (1/P).
 
-## Software Stack
+## Software & Dependencies
 
-| Software / Library       | Version       | Purpose                                      |
-|--------------------------|---------------|----------------------------------------------|
-| GROMACS                  | 2022.2        | MD simulations, umbrella sampling, analysis  |
-| AmberTools               | 2024          | GAFF parameterization, antechamber, etc.     |
-| Gaussian                 | 16            | QM calculation of partial charges (RESP)     |
-| Python                   | 3.9+          | Post-processing and analysis                 |
-| NumPy                    | —             | Numerical operations                         |
-| RDKit                    | —             | Molecule handling, SMILES → 3D               |
-| cclib                    | —             | Parsing Gaussian output                      |
-| Matplotlib               | —             | Plotting free energy profiles, diffusion     |
+| Software / Library       | Version       | 
+|--------------------------|---------------|
+| GROMACS                  | 2022.4        | 
+| AmberTools               | 2024          | 
+| Gaussian                 | 16            |
+| Python                   | 3.9+          |
+| NumPy                    | 1.24.3        |
+| Scipy                    | 1.5.3         |
+| Sklearn                  | 1.3.0         |
+| Statsmodels              | 0.14.1        |
+| Uncertainties            | 3.2.3         |
 
 ## Repository Structure (suggested / typical layout)
 
