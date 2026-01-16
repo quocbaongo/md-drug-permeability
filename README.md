@@ -45,7 +45,6 @@ This repository provides a reproducible computational workflow for theoretically
 │   	├── System_coordinates/				              # Drug molecule starting coordinates
 │   	└── MDSimulation/
    	        ├── Simulation_workflow.sh			          # Detailed illustration of the drug molecule's permeation through lipid bilayer
-			├── Analysis_procedure.sh			          # Post-simulation analysis procedure
 	    	└── Analysis_scripts/			              # Python scripts for post-simulation analysis written by Lundborg et al. (2024)
 ```
 ## Detailed Workflow
@@ -71,7 +70,7 @@ where
 - $T = 298$ K (standard)  
 - $\ln(10) \approx 2.302585$
 
-### 3. Membrane Resistance Permeation
+### 3. Membrane Permeation Resistance
 
 This section provides the workflow for computing the permeability coefficient of the drug molecule passing through a lipid bilayer membrane. Here, we utilize the Inhomogeneous Solubility-Diffusion (ISD) model. The total resistance to permeation (R) is derived by integrating the local resistance across the membrane, which is placed perpendicular to z-axis:
 
