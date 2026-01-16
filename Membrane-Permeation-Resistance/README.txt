@@ -10,7 +10,7 @@
 		. The folder "MDSimulation" contains file "Simulation_workflow.sh" describing step-by-step how to perform the AWH simulation for drug molecule permeation process and all the python scripts within "Analysis_scripts" folder were used for post-simulation analysis. 
 
 
-	. Within "Drug_molecule_hydration" folder:
+	. Within "Drug_molecule_water_solvation" folder:
 
 		. File named "PreEquilibrated-water-box_100ns.gro" is the pre-equilibrated water box, in which drug molecule will be placed randomly inside the box.
 		. File "Simulation_workflow.sh" describes the step-by-step how to compute water solvation free energy using AWH simulation technique.
