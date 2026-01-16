@@ -46,9 +46,9 @@ The workflow follows a pipeline of **Parameterization → Validation → Product
 │   	├── System_topology/				                  # Drug molecule simulation's parameters
 │   	├── System_coordinates/				               # Drug molecule starting coordinates
 │   	└── MDSimulation/
-   	    ├── Simulation_workflow.sh			         # Detailed illustration of the drug molecule's permeation through lipid bilayer
-	    ├── Analysis_procedure.sh			               # Post-simulation analysis procedure
-	    └── Analysis_scripts/			                  # Python scripts for post-simulation analysis written by Lundborg et al. (2024)
+   	        ├── Simulation_workflow.sh			         # Detailed illustration of the drug molecule's permeation through lipid bilayer
+			├── Analysis_procedure.sh			               # Post-simulation analysis procedure
+	    	└── Analysis_scripts/			                  # Python scripts for post-simulation analysis written by Lundborg et al. (2024)
 ```
 ## Detailed Workflow
 
