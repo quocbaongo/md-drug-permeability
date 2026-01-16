@@ -21,24 +21,34 @@ The workflow follows a pipeline of **Parameterization → Validation → Product
 ## Repository Structure (suggested / typical layout)
 
 ```text
-├── Drug-molecule-parameters/				# Generating simulation parameters for researched drug molecule
-│   ├── Drug_molecule_structure/			# Structure of drug molecule "YT0_H.mol2" in .mol2 format
+├── Drug-molecule-parameters/                        # Generating simulation parameters for researched drug molecule
+│   ├── Drug_molecule_structure/                     # Structure of drug molecule "YT0_H.mol2" in .mol2 format
 │   ├── Parameterization_workflow/
-│   	├── Parameterization-workflow.sh		# Description of generating simulation parameters for drug molecule using Ambertools and Gaussian softwares
+│   	├── Parameterization-workflow.sh               # Description of generating simulation parameters for drug molecule using Ambertools and Gaussian softwares
 │   	├── 1.Geometry_optimization/
 │   	├── 2.ESP-charges-calculation/
 │   	├── 3.RESP-calculation/
 │   	└── 4.Drug_Gromacs_parameters/
 │
-├── Water-octanol-partitioning/				# Validating generated simulation parameters   	
-│   ├── logP-thermodynamics-cycle.pptx			# Theoretical background underlying logP computation
-│   ├── Water_hydration/
-│   	└── Simulation_workflow.sh			# Detailed illustration of the solvation free energy for the drug in water 
-│   └── Octanol_hydration
-│   	└── Simulation_workflow.sh			# Detailed illustration of the solvation free energy for the drug in octanol
+├── Water-octanol-partitioning/                       # Validating generated simulation parameters   	
+│   ├── logP-thermodynamics-cycle.pptx                # Theoretical background underlying logP computation
+│   ├── Water_solvation/
+│   	└── Simulation_workflow.sh			               # Detailed illustration of the solvation free energy for the drug in water 
+│   └── Octanol_solvation/
+│   	└── Simulation_workflow.sh			               # Detailed illustration of the solvation free energy for the drug in octanol
 │
-├── Resistance-permeation-computation/			# Estimating permeability coefficient of the researched drug molecule
-└── solvent-to-membrane-thermodynamics-cycle.pptx	# Theoretical background underlying the resistance permation computation
+├── Resistance-permeation-computation/			         # Estimating permeability coefficient of the researched drug molecule
+│   ├── solvent-to-membrane-thermodynamics-cycle.pptx	# Theoretical background underlying the resistance permation computation
+│   ├── Drug_molecule_water_solvation/
+│   	├── Simulation_workflow.sh			               # Detailed illustration of the solvation free energy for the drug in water using AWH method
+│	└── PreEquilibrated-water-box_100ns.gro		      # Pre-equilibrated box of water molecules
+│   └── Drug_molecule_permeation/
+│   	├── System_topology/				                  # Drug molecule simulation's parameters
+│   	├── System_coordinates/				               # Drug molecule starting coordinates
+│   	└── MDSimulation/
+   	    ├── Simulation_workflow.sh			         # Detailed illustration of the drug molecule's permeation through lipid bilayer
+	    ├── Analysis_procedure.sh			               # Post-simulation analysis procedure
+	    └── Analysis_scripts/			                  # Python scripts for post-simulation analysis written by Lundborg et al. (2024)
 ```
 ## Detailed Workflow
 
