@@ -6,17 +6,16 @@ The workflow follows a pipeline of **Parameterization → Validation → Product
 
 ## Software & Dependencies
 
-| Software / Library       | Version       | 
-|--------------------------|---------------|
-| GROMACS                  | 2022.4        | 
-| AmberTools               | 2024          | 
-| Gaussian                 | 16            |
-| Python                   | 3.9+          |
-| NumPy                    | 1.24.3        |
-| Scipy                    | 1.5.3         |
-| Sklearn                  | 1.3.0         |
-| Statsmodels              | 0.14.1        |
-| Uncertainties            | 3.2.3         |
+* **GROMACS:** v2022.4
+* **AmberTools:** v2024
+* **Gaussian:** v16
+
+**Python v3.9+ Environment:**
+* `numpy`: 1.24.3
+* `scipy`: 1.5.3
+* `sklearn`: 1.3.0 
+* `statsmodels`: 0.14.1
+* `uncertainties`: 0.14.1
 
 ## Repository Structure (suggested / typical layout)
 
