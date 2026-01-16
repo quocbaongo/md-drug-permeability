@@ -55,8 +55,8 @@ This repository provides a reproducible computational workflow for theoretically
 See [`Parameterization-workflow.sh`](Parameterization-workflow.sh)
 
 This script guides through generating simulation parameters for the researched drug molecule. The procedure involves:
-- Charge Derivation: Assigning partial atomic charges using Quantum Mechanical (QM) methods. 
-- Topology Generation: Deriving bonded parameters using the General Amber Force Field (GAFF).
+- **Charge Derivation**: Assigning partial atomic charges using Quantum Mechanical (QM) methods. 
+- **Topology Generation**: Deriving bonded parameters using the General Amber Force Field (GAFF).
 
 ### 2. Water–Octanol Partitioning
 
@@ -71,21 +71,9 @@ where
 - $T = 298$ K (standard)  
 - $\ln(10) \approx 2.302585$
 
+### 3. Membrane Resistance Permeation
 
-
-
-
-
-
-
-
-
-
-### 3. Membrane Permeability Coefficient
-
-Follows the position-dependent permeability model (see reference below).
-
-The inverse permeability (resistance) is calculated as:
+This section provides the workflow for computing the permeability coefficient of the drug molecule passing through a lipid bilayer membrane. Here, we utilize the Inhomogeneous Solubility-Diffusion (ISD) model. The total resistance to permeation (R) is derived by integrating the local resistance across the membrane, which is placed perpendicular to z-axis:
 
 $$
 R = \frac{1}{P} = (30 \pm 6) \times \int_{z_1}^{z_2} \frac{e^{\beta \Delta G_\text{rel, water}(z)}}{D(z)}\ \text{d}z
