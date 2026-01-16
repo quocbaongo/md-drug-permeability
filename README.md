@@ -20,24 +20,20 @@ The workflow follows a pipeline of **Parameterization → Validation → Product
 
 ## Repository Structure (suggested / typical layout)
 
-├── README.md
-├── Parameterization-workflow.sh           # Main script: YT0 parameterization
-├── logP_calculation/
-│   ├── water/
-│   ├── octanol/
-│   └── analyze_logP.py
-├── permeability/
-│   ├── bilayer_setup/
-│   ├── umbrella_windows/
-│   ├── analysis/
-│   └── permeability_integration.py
-├── data/
-│   ├── YT0_Gaussian.log
-│   ├── topologies/
-│   └── example_profiles/
-└── figures/
-└── example_free_energy_profile.png
-
+├── parameters/
+│   ├── Parameterization-workflow.sh   # Master script for topology generation
+│   ├── YT0.mol2                       # Initial ligand structure
+│   └── logs/                          # Gaussian QM logs
+├── validation/
+│   ├── water/                         # Solvation free energy in water
+│   └── octanol/                       # Solvation free energy in octanol
+├── membrane_sim/
+│   ├── top/                           # System topology
+│   ├── traj/                          # Trajectory files (excluded from git)
+│   └── wham/                          # Windows for Umbrella Sampling
+└── analysis/
+    ├── calc_logP.py                   # Script for partition coefficient
+    └── calc_permeability.py           # Script for ISD integration
 ## Detailed Workflow
 
 ### 1. Drug Molecule Parameterization
