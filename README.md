@@ -1,97 +1,111 @@
-# md-drug-permeability
-\documentclass[11pt, a4paper]{article}
+# Drug Permeability Estimation via Molecular Dynamics Simulations
 
-% Essential packages for scientific writing
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{amsmath, amssymb}  % For advanced math and symbols
-\usepackage{geometry}           % For page margins
-\usepackage{hyperref}           % For hyperlinks
-\usepackage{enumitem}           % For better list formatting
-\usepackage{xcolor}             % For coloring links (optional)
+This repository provides a complete, reproducible computational workflow for theoretically estimating the **permeability coefficient** of small drug-like molecules across lipid bilayer membranes using **molecular dynamics (MD) simulations**.
 
-% Page setup
-\geometry{margin=1in}
+The workflow covers three main stages:
 
-% Hyperlink setup
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=blue,
-    pdftitle={MD Permeability Workflow},
-    pdfpagemode=FullScreen,
-}
+1. Deriving and parameterizing the drug molecule for MD simulations  
+2. Validating the parameters by computing the octanol–water partition coefficient (log Pₒw)  
+3. Computing the membrane permeability coefficient via free energy and diffusion profiles  
 
-\title{\textbf{Permeability Coefficient Estimation Workflow: \\ Drug-Membrane Interactions}}
-\author{Computational Biology Research Group}
-\date{\today}
+The example molecule used throughout is **YT0** (RCSB Ligand ID: [YT0](https://www.rcsb.org/ligand/YT0)).
 
-\begin{document}
+## Workflow Overview
 
-\maketitle
+1. **Drug Molecule Parameterization**  
+   Generate simulation-ready topology and coordinate files using quantum mechanics for partial charges and the General Amber Force Field (GAFF) for bonded parameters.
 
-\section{Overview}
-This document outlines the computational workflow for theoretically estimating the permeability coefficient of small molecule drugs across lipid bilayers using Molecular Dynamics (MD) simulations. The pipeline focuses on the researched drug molecule \textbf{YT0} (\href{https://www.rcsb.org/ligand/YT0}{RCSB Ligand ID: YT0}) and implements the Inhomogeneous Solubility-Diffusion Model (ISDM).
+2. **Parameter Validation – log Pₒw Calculation**  
+   Compute solvation free energies in water and octanol → calculate log Pₒw as a quality check of the force field parameters.
 
-The workflow is divided into three primary modules:
-\begin{enumerate}
-    \item \textbf{Parameterization:} Derivation of high-fidelity simulation parameters.
-    \item \textbf{Validation:} Partition coefficient ($\log P_{ow}$) calculation.
-    \item \textbf{Permeability:} Computation of Free Energy Profiles (FEP) and Local Diffusion Coefficients to determine membrane resistance.
-\end{enumerate}
+3. **Permeability Coefficient Calculation**  
+   Perform umbrella sampling across a lipid bilayer → reconstruct PMF (ΔG(z)) → compute local diffusion coefficients D(z) → integrate to obtain permeation resistance (1/P).
 
-\section{Software \& Dependencies}
-The workflow relies on the following software stack:
-\begin{itemize}
-    \item \textbf{MD Engine:} GROMACS (v2022.2)
-    \item \textbf{Parameterization:} AmberTools2024, Gaussian16 (for QM calculations)
-    \item \textbf{Analysis \& Scripting:} Python 3.x
-    \begin{itemize}
-        \item \textit{Libraries:} \texttt{numpy}, \texttt{rdkit}, \texttt{cclib}, \texttt{matplotlib}
-    \end{itemize}
-\end{itemize}
+## Software Stack
 
-\section{Methodology}
+| Software / Library       | Version       | Purpose                                      |
+|--------------------------|---------------|----------------------------------------------|
+| GROMACS                  | 2022.2        | MD simulations, umbrella sampling, analysis  |
+| AmberTools               | 2024          | GAFF parameterization, antechamber, etc.     |
+| Gaussian                 | 16            | QM calculation of partial charges (RESP)     |
+| Python                   | 3.9+          | Post-processing and analysis                 |
+| NumPy                    | —             | Numerical operations                         |
+| RDKit                    | —             | Molecule handling, SMILES → 3D               |
+| cclib                    | —             | Parsing Gaussian output                      |
+| Matplotlib               | —             | Plotting free energy profiles, diffusion     |
 
-\subsection{1. Drug Molecule Parameterization}
-\textbf{Script:} \texttt{Parameterization-workflow.sh}
+## Repository Structure (suggested / typical layout)
 
-This module provides a detailed protocol for generating topology and coordinate files for the drug molecule. The parameterization strategy ensures high accuracy for non-standard residues:
-\begin{itemize}
-    \item \textbf{Partial Charges:} Calculated via Quantum Mechanical (QM) methods using Gaussian16. Charges are typically fitted using the RESP (Restrained Electrostatic Potential) or equivalent scheme.
-    \item \textbf{Bonded Parameters:} Derived from the General Amber Force Field (GAFF).
-\end{itemize}
+├── README.md
+├── Parameterization-workflow.sh           # Main script: YT0 parameterization
+├── logP_calculation/
+│   ├── water/
+│   ├── octanol/
+│   └── analyze_logP.py
+├── permeability/
+│   ├── bilayer_setup/
+│   ├── umbrella_windows/
+│   ├── analysis/
+│   └── permeability_integration.py
+├── data/
+│   ├── YT0_Gaussian.log
+│   ├── topologies/
+│   └── example_profiles/
+└── figures/
+└── example_free_energy_profile.png
 
-\subsection{2. Validation: Water-Octanol Partitioning ($\log P_{ow}$)}
-To validate the force field parameters derived in step 1, we compute the octanol-water partition coefficient ($\log P_{ow}$). This is achieved by calculating the solvation free energies of the drug in water ($\Delta G_{\text{solv}}^{\text{water}}$) and in octanol ($\Delta G_{\text{solv}}^{\text{oct}}$).
+## Detailed Workflow
 
-The partition coefficient is calculated as:
-\begin{equation}
-    \log P_{ow} = \frac{\Delta G_{\text{solv}}^{\text{water}} - \Delta G_{\text{solv}}^{\text{oct}}}{RT \ln(10)}
-\end{equation}
-Where:
-\begin{itemize}
-    \item $R$ is the universal gas constant ($8.314 \times 10^{-3} \, \text{kJ} \cdot \text{mol}^{-1} \cdot \text{K}^{-1}$).
-    \item $T$ is the absolute temperature.
-    \item $\ln(10) \approx 2.30258$ conversion factor.
-\end{itemize}
+### 1. Drug Molecule Parameterization
 
-\subsection{3. Permeability Coefficient Computation}
-\textbf{Reference:} \href{https://www.sciencedirect.com/science/article/pii/S0006349522007378}{Biophysical Journal, 2022 (DOI: 10.1016/j.bpj.2022.08.025)}
+See [`Parameterization-workflow.sh`](Parameterization-workflow.sh)
 
-This module implements the workflow for calculating the membrane permeability coefficient ($P$). Using the Inhomogeneous Solubility-Diffusion Model, the total resistance to permeation ($R$) is obtained by integrating the local resistance across the bilayer normal ($z$).
+This script guides through:
 
-The relationship is defined as:
-\begin{equation}
-    \frac{1}{P} = R = R_{\text{hydrodynamic}} + \int_{z_{1}}^{z_{2}} \frac{e^{\beta \Delta G(z)}}{D(z)} \, dz
-\end{equation}
-Where:
-\begin{itemize}
-    \item $R_{\text{hydrodynamic}}$: Resistance contribution from the hydrodynamic water layer (approximated as $30 \pm 6$ in specific setups).
-    \item $\Delta G(z)$: Potential of Mean Force (PMF) relative to bulk water.
-    \item $D(z)$: Local diffusion coefficient profile along the membrane normal.
-    \item $\beta = (k_B T)^{-1}$.
-\end{itemize}
+- 3D structure preparation (RDKit or manual)
+- Geometry optimization + HF/6-31G* ESP calculation in Gaussian 16
+- RESP charge fitting
+- GAFF parameter assignment using `antechamber` and `parmchk2`
+- Conversion to GROMACS format (via acpype or parmed)
 
-\end{document}
+### 2. Water–Octanol Partition Coefficient (Validation)
+
+Solvation free energy difference is used to compute:
+
+$$
+\log_{10} P_{ow} = \frac{\Delta G^\circ_\text{water} - \Delta G^\circ_\text{octanol}}{RT \ln(10)}
+$$
+
+where  
+- $R = 8.31446261815 \times 10^{-3}$ kJ mol⁻¹ K⁻¹  
+- $T = 298$ K (standard)  
+- $\ln(10) \approx 2.302585$
+
+Typical methods: thermodynamic integration (TI) or Bennett Acceptance Ratio (BAR) in explicit solvent.
+
+### 3. Membrane Permeability Coefficient
+
+Follows the position-dependent permeability model (see reference below).
+
+The inverse permeability (resistance) is calculated as:
+
+$$
+R = \frac{1}{P} = (30 \pm 6) \times \int_{z_1}^{z_2} \frac{e^{\beta \Delta G_\text{rel, water}(z)}}{D(z)}\ \text{d}z
+$$
+
+where  
+- $\beta = 1/(k_B T)$  
+- $\Delta G_\text{rel, water}(z)$ = potential of mean force relative to bulk water  
+- $D(z)$ = local diffusion coefficient along the membrane normal  
+- The factor $(30 \pm 6)$ is an empirical prefactor (in s/m or equivalent units after calibration; commonly used in recent literature)
+
+Reference methodology:  
+Lundborg et al., *Biophysical Journal* (2022)  
+https://doi.org/10.1016/j.bpj.2022.07.016
+
+## Getting Started
+
+1. Clone the repository  
+   ```bash
+   git clone https://github.com/yourusername/drug-permeability-md-workflow.git
+   cd drug-permeability-md-workflow
