@@ -6,6 +6,7 @@ The workflow follows a pipeline of **Parameterization → Validation → Product
 
 ## Software & Dependencies
 
+**MD simulation & Quantum Mechanics:**
 * **GROMACS:** v2022.4
 * **AmberTools:** v2024
 * **Gaussian:** v16
