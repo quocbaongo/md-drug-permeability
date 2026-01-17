@@ -65,10 +65,6 @@ $$
 logP = \frac{ΔG_{hydration}​ - ΔG_{octanol, solvation}}{RT \ln(10)}
 $$
 
-$$
-\log_{10} P_{ow} = \frac{\Delta G^\circ_\text{water} - \Delta G^\circ_\text{octanol}}{RT \ln(10)}
-$$
-
 where  
 - $R = 8.31446261815 \times 10^{-3}$ kJ mol⁻¹ K⁻¹  
 - $T = 298$ K (standard)  
@@ -79,7 +75,7 @@ where
 This section provides the workflow for computing the permeability coefficient of the drug molecule passing through a lipid bilayer membrane. Here, we utilize the Inhomogeneous Solubility-Diffusion (ISD) model. The total resistance to permeation (R) is derived by integrating the local resistance across the membrane, which is placed perpendicular to z-axis:
 
 $$
-R = \frac{1}{P} = N \times \int_{z_1}^{z_2} \frac{e^{\beta \Delta G_\text{rel, water}(z)}}{D(z)}\ \text{d}z
+R = \frac{1}{K_{p}} = N \times \int_{z_1}^{z_2} \frac{e^{\beta \Delta G_\text{rel, water}(z)}}{D(z)}\ \text{d}z
 $$
 
 where  
@@ -87,5 +83,5 @@ where
 - $\Delta G_\text{rel, water}(z)$ is the Potential of Mean Force (free energy profile) relative to the hydration free energy.
 - $D(z)$ is the local diffusion coefficient profile across the membrane. 
 - N is the number of the lipid bilayers.
-- P is the permeability coefficient.
+- $$K_{p}$$ is the permeability coefficient.
 
