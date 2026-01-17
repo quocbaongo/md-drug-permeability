@@ -61,6 +61,9 @@ This script guides through generating simulation parameters for the researched d
 
 Basic validation of the simulation parameters can be performed by reproducing the experimental water-octanol partition coefficient (logP). The estimation of drug molecule's logP value requires the computation of its solvation free energies in water (ΔGw​) and octanol (ΔGo​). The partition coefficient is calculated as:
 
+$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
+
+
 $$
 \log_{10} P_{ow} = \frac{\Delta G^\circ_\text{water} - \Delta G^\circ_\text{octanol}}{RT \ln(10)}
 $$
