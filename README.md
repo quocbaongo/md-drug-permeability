@@ -85,6 +85,6 @@ where
 - N is the number of the lipid bilayers.
 - $$K_{p}$$ is the permeability coefficient.
 
-
+Below present the evolution of free energy profile and local diffusion coefficient profile throughout the simulation time
 
 
