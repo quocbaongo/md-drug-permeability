@@ -74,6 +74,8 @@ where
 
 ### 3. Membrane Permeation Resistance
 
+See [`Drug-membrane-permeation-workflow.sh`](https://github.com/quocbaongo/md-drug-permeability/blob/main/Membrane-Permeation-Resistance/Drug_molecule_permeation/MDSimulation/Simulation_workflow.sh)
+
 This section provides the workflow for computing the permeability coefficient of the drug molecule passing through a lipid bilayer membrane. Here, we utilize the Inhomogeneous Solubility-Diffusion (ISD) model. The total resistance to permeation (R) is derived by integrating the local resistance across the membrane, which is placed perpendicular to z-axis:
 
 $$
