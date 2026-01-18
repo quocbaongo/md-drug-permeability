@@ -203,7 +203,7 @@ cd $WorkDir/AWH_$i/AWH-related-data_temp
 
 gmx_mpi awh -s $WorkDir/AWH_$i/awh.tpr -f $WorkDir/AWH_$i/ener.edr -quiet -more -fric $WorkDir/AWH_$i/AWH-related-data_temp/friction.xvg -o $WorkDir/AWH_$i/AWH-related-data_temp/awh.xvg
 
-$extractionCmd -i $WorkDir/AWH_$i/AWH-related-data_temp/friction_t$t.xvg -c 1 -v 0 -o $WorkDir/AWH_$i/AWH-related-data_temp/extr_friction_t$t.xvg
+$extractionCmd -i $WorkDir/AWH_$i/AWH-related-data_temp/friction_t$time.xvg -c 1 -v 0 -o $WorkDir/AWH_$i/AWH-related-data_temp/extr_friction_t$time.xvg
 
 
 
@@ -211,8 +211,8 @@ for ((i=2; i<21; i++))
 do
 	mkdir $WorkDir/AWH_$i/AWH-related-data_temp
 	cd $WorkDir/AWH_$i/AWH-related-data_temp
-	gmx_mpi awh -s $WorkDir/AWH_$i/awh.tpr -f $WorkDir/AWH_$i/ener.edr -fric -b $t -e $t
-	$extractionCmd -i $WorkDir/AWH_$i/AWH-related-data_temp/friction_t$t.xvg -c 1 -v 0 -o $WorkDir/AWH_$i/AWH-related-data_temp/extr_friction_t$t.xvg
+	gmx_mpi awh -s $WorkDir/AWH_$i/awh.tpr -f $WorkDir/AWH_$i/ener.edr -fric -b $time -e $time
+	$extractionCmd -i $WorkDir/AWH_$i/AWH-related-data_temp/friction_t$time.xvg -c 1 -v 0 -o $WorkDir/AWH_$i/AWH-related-data_temp/extr_friction_t$time.xvg
 	
 done
 
@@ -225,8 +225,6 @@ $extractionCmd -i $WorkDir/AWH_$i/AWH-related-data_temp/awh_t$time.xvg -c 1 -v 0
 $diffusionCmd -f $WorkDir/AWH_*/AWH-related-data_temp/extr_friction_t$time.xvg -t $temp -c 1 -s 0.2 -o $WorkDir/AWH_$i/AWH-related-data_temp/diffusion_t$time
 
 $permeabilityCmd -p $WorkDir/AWH_$i/AWH-related-data_temp/extr_pmf_watercal_t$time.xvg -t $temp -l 14 -d $WorkDir/AWH_$i/AWH-related-data_temp/diffusion_t$time.xvg -o $WorkDir/AWH_$i/AWH-related-data_temp/permeability_watercal_t$time
-
-
 
 
 
