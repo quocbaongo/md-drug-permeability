@@ -59,6 +59,8 @@ This script guides through generating simulation parameters for the researched d
 
 ### 2. Water–Octanol Partitioning
 
+See [`Drug-solvation-free-energy-in-water-workflow.sh`](https://github.com/quocbaongo/md-drug-permeability/blob/main/Water-octanol-partitioning/Water_solvation/Simulation_workflow.sh) and [`Drug-solvation-free-energy-in-octanol-workflow.sh`](https://github.com/quocbaongo/md-drug-permeability/blob/main/Water-octanol-partitioning/Octanol_solvation/Simulation_workflow.sh)
+
 Basic validation of the simulation parameters can be performed by reproducing the experimental water-octanol partition coefficient (logP). The estimation of drug molecule's logP value requires the computation of its solvation free energies in water ($$ΔG_{hydration}$$​) and octanol ($$ΔG_{octanol, solvation}$$​). The partition coefficient is calculated as:
 
 $$
