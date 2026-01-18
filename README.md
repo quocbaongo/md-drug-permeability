@@ -51,7 +51,7 @@ This repository provides a reproducible computational workflow for theoretically
 
 ### 1. Drug Molecule Parameterization
 
-See [`Parameterization-workflow.sh`](Parameterization-workflow.sh)
+See [`Parameterization-workflow.sh`](https://github.com/quocbaongo/md-drug-permeability/blob/main/Drug-molecule-parameters/Parameterization_workflow/Parameterization-workflow.sh)
 
 This script guides through generating simulation parameters for the researched drug molecule. The procedure involves:
 - **Charge Derivation**: Assigning partial atomic charges using Quantum Mechanical (QM) methods. 
