@@ -88,7 +88,8 @@ where
 - $D(z)$ is the local diffusion coefficient profile across the membrane. 
 - N is the number of the lipid bilayers.
 - $$K_{p}$$ is the permeability coefficient.
-
+<br>
+<br>
 Below present the evolution of free energy profile and local diffusion coefficient profile throughout the simulation time
 
 
@@ -98,7 +99,8 @@ https://github.com/user-attachments/assets/80f57717-cf14-4ff6-ad3f-0827a14a3e99
 
 
 https://github.com/user-attachments/assets/c3510ea3-05b1-4ffa-8d89-808f708c592b
-
+<br>
+<br>
 Sampled drug conformations when its non-bonded interactions are fully ON are shown at different positions relative to the membrane: bulk water, membrane–water interface (adsorption), and inside membrane. Note that the simulation box is ~12 nm along z-direction, with the membrane spanning between z = 4–8 nm. Structures shown are the dominant conformations from RMSD clustering pooled across 20 AWH walkers.
 
 
