@@ -1,6 +1,6 @@
 # Drug Permeability Estimation via Molecular Dynamics Simulations
 
-This repository provides a reproducible computational workflow for theoretically estimating the **permeability coefficient** of small drug-like molecules across a lipid bilayer membrane structure using **molecular dynamics (MD) simulations**. The workflow follows a pipeline of **Deriving drug molecule simulation parameters → validating simulation parameters → computing drug's resistance permeation**. The Inhomogeneous Solubility-Diffusion (ISD) model was used to compute permeation resistance across the lipid bilayer, using the drug molecule **YT0** (RCSB Ligand ID: [YT0](https://www.rcsb.org/ligand/YT0)) as the primary case study.
+This repository provides a reproducible computational workflow for theoretically estimating the **permeability coefficient** of small drug-like molecules across a lipid bilayer membrane structure using **molecular dynamics (MD) simulations**. The workflow follows a pipeline of **Deriving drug molecule simulation parameters → validating simulation parameters → computing drug's resistance permeation**. The Inhomogeneous Solubility-Diffusion (ISD) model was used to compute permeation resistance of the drug molecule across the lipid bilayer.
 
 ## Software & Dependencies
 
@@ -20,7 +20,7 @@ This repository provides a reproducible computational workflow for theoretically
 
 ```text
 ├── Drug-molecule-parameters/                            # Generating simulation parameters for researched drug molecule
-│   ├── Drug_molecule_structure/                         # Structure of drug molecule "YT0_H.mol2" in .mol2 format
+│   ├── Drug_molecule_structure/                         # Structure of the drug molecule in .mol2 format
 │   ├── Parameterization_workflow/
 │   	├── Parameterization-workflow.sh                 # Description of generating simulation parameters for drug molecule using Ambertools and Gaussian softwares
 │   	├── 1.Geometry_optimization/
