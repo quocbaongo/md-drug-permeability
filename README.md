@@ -57,11 +57,11 @@ This script guides through generating simulation parameters for the researched d
 - **Charge Derivation**: Assigning partial atomic charges using Quantum Mechanics (QM) methods. 
 - **Topology Generation**: Deriving bonded parameters using the General Amber Force Field (GAFF).
 
-https://github.com/user-attachments/assets/7ae54eb2-025a-4cbb-99db-29f9cb08eb47
 
 
+		https://github.com/user-attachments/assets/184d6711-5ed7-45d3-8e08-ce8fa22dbfb9
 
-https://github.com/user-attachments/assets/3cc6c5c8-5628-4da5-8e73-7a10c200e589
+
 
 
 
