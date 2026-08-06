@@ -66,14 +66,16 @@ This script guides through generating simulation parameters for the researched d
   **QM Torsional Scan** (0° -> 360°, 5° step, remaining structure minimized at each point) **->** **QM Torsional Energy Profile** (reference) **->** **Compare against MD-Sampled Dihedral Distribution** (6 replicates x 300 ns)
   For each flagged dihedral, the angle was rotated from 0° to 360° in 5° increments, minimizing the rest of the structure at each step to generate a set of conformers. The energy of each conformer was computed to construct a QM torsional energy profile, which served as the reference. The derived partial charges and GAFF2 bond parameters were then used to define the drug molecule in standard MD simulations (6 replicates, 300 ns each), and the probability distribution of the sampled dihedral angle was compared against the reference QM torsional energy profile to confirm reasonable conformational sampling.
 
-The two videos below present the outcome of the dihedral angle validation process described above.
-
-
+The two videos below present the outcome of the dihedral angle validation process described above. Each video below is organized into three panels:
+- **Top row**: the dihedral rotation, generating each conformer along the scan.
+- **Bottom-left**: the QM relative energy corresponding to each rotameric conformer displayed above.
+- **Bottom-right**: a static graph showing the probability distribution of the inspected dihedral angle, obtained from standard molecular dynamics simulations.
+<br><br><br>
 <p align="center"><strong> First Dihedral Validation </strong></p>
 <div align="center">
 	<video src="https://github.com/user-attachments/assets/3ad3d8c6-0684-4b04-9948-1d836c0730b5" controls width="600"></video>
 </div>
-<br><br>
+<br><br><br>
 <p align="center"><strong> Second Dihedral Validation </strong></p>
 <div align="center">
 	<video src="https://github.com/user-attachments/assets/184d6711-5ed7-45d3-8e08-ce8fa22dbfb9" controls width="600"></video>
