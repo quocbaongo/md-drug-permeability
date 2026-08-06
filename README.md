@@ -54,8 +54,20 @@ This repository provides a reproducible computational workflow for theoretically
 See [`Parameterization-workflow.sh`](https://github.com/quocbaongo/md-drug-permeability/blob/main/Drug-molecule-parameters/Parameterization_workflow/Parameterization-workflow.sh)
 
 This script guides through generating simulation parameters for the researched drug molecule. The procedure involves:
-- **Charge Derivation**: Assigning partial atomic charges using Quantum Mechanical (QM) methods. 
+- **Charge Derivation**: Assigning partial atomic charges using Quantum Mechanics (QM) methods. 
 - **Topology Generation**: Deriving bonded parameters using the General Amber Force Field (GAFF).
+
+https://github.com/user-attachments/assets/7ae54eb2-025a-4cbb-99db-29f9cb08eb47
+
+
+
+https://github.com/user-attachments/assets/3cc6c5c8-5628-4da5-8e73-7a10c200e589
+
+
+
+
+
+
 
 ### 2. Water–Octanol Partitioning
 
