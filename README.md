@@ -73,19 +73,11 @@ The two videos below present the outcome of the dihedral angle validation proces
 <div align="center">
 	<video src="https://github.com/user-attachments/assets/3ad3d8c6-0684-4b04-9948-1d836c0730b5" controls width="600"></video>
 </div>
-
+<br><br>
 <p align="center"><strong> Second Dihedral Validation </strong></p>
 <div align="center">
 	<video src="https://github.com/user-attachments/assets/184d6711-5ed7-45d3-8e08-ce8fa22dbfb9" controls width="600"></video>
 </div>
-
-
-
-
-
-
-
-
 
 ### 2. Water–Octanol Partitioning
 
