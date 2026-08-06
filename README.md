@@ -8,6 +8,7 @@ This repository provides a reproducible computational workflow for theoretically
 * **GROMACS:** v2022.4
 * **AmberTools:** v2024
 * **Gaussian:** v16
+* * **PyMol:** v3.1.8
 
 **Python v3.9+ Environment:**
 * `numpy`: 1.24.3
