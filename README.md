@@ -55,7 +55,16 @@ This repository provides a reproducible computational workflow for theoretically
 See [`Parameterization-workflow.sh`](https://github.com/quocbaongo/md-drug-permeability/blob/main/Drug-molecule-parameters/Parameterization_workflow/Parameterization-workflow.sh)
 
 This script guides through generating simulation parameters for the researched drug molecule. The procedure involves:
-- **Charge Derivation**: Assigning partial atomic charges using Quantum Mechanics (QM) methods. 
+- **Charge Derivation**: Assigning partial atomic charges using Quantum Mechanics (QM) methods.
+
+**QM Geometry Optimization** (Gaussian) **->** **Electrostatic Potential (ESP) Calculation** on the optimized structure (Gaussian) **->** **RESP Charge Fitting** (AmberTools)
+
+The drug molecule was first geometry-optimized at the quantum mechanical level,
+after which the electrostatic potential surrounding the optimized structure was
+computed, both in Gaussian. The resulting ESP was then used in AmberTools to
+fit RESP atomic partial charges that reproduce the molecule's electrostatic
+potential at its molecular surface.
+
 - **Topology Generation**: Deriving bonded parameters using the General Amber Force Field (GAFF).
 
 
