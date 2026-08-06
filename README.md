@@ -58,8 +58,9 @@ This script guides through generating simulation parameters for the researched d
 - **Topology Generation**: Deriving bonded parameters using the General Amber Force Field (GAFF).
 
 
-
-		https://github.com/user-attachments/assets/184d6711-5ed7-45d3-8e08-ce8fa22dbfb9
+<div align="center">
+	<video src="https://github.com/user-attachments/assets/184d6711-5ed7-45d3-8e08-ce8fa22dbfb9" controls width="600"></video>
+</div>
 
 
 
