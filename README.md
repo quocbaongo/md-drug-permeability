@@ -61,9 +61,18 @@ This script guides through generating simulation parameters for the researched d
 
   The drug molecule was first geometry-optimized at the quantum mechanical level, after which the electrostatic potential surrounding the optimized structure was computed, both in Gaussian. The resulting ESP was then used in AmberTools to fit RESP atomic partial charges that reproduce the molecule's electrostatic potential at its molecular surface.
   
-- **Topology Generation**: Deriving bonded parameters using the General Amber Force Field (GAFF).
+- **Topology Generation**: Deriving bonded parameters using the General Amber Force Field 2 (GAFF2). Antechamber successfully assigned parameters for all bond terms; however, two dihedral angles formed by atoms **c1-c2-n3-c9** and **c1-c2-c3-c4**, were flagged with a high penalty score and required validation:
+
+  **QM Torsional Scan** (0° -> 360°, 5° step, remaining structure minimized at each point) **->** **QM Torsional Energy Profile** (reference) **->** **Compare against MD-Sampled Dihedral Distribution** (6 replicates x 300 ns)
+  For each flagged dihedral, the angle was rotated from 0° to 360° in 5° increments, minimizing the rest of the structure at each step to generate a set of conformers. The energy of each conformer was computed to construct a QM torsional energy profile, which served as the reference. The derived partial charges and GAFF2 bond parameters were then used to define the drug molecule in standard MD simulations (6 replicates, 300 ns each), and the probability distribution of the sampled dihedral angle was compared against the reference QM torsional energy profile to confirm reasonable conformational sampling.
+
+The two videos below present the outcome of the dihedral angle validation process described above.
 
 
+<p align="center"><strong>Dihedral Validation: c1-c2-n3-c9</strong></p>
+<div align="center">
+	<video src="https://github.com/user-attachments/assets/3ad3d8c6-0684-4b04-9948-1d836c0730b5" controls width="400"></video>
+</div>
 
 
 <div align="center">
