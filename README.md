@@ -81,10 +81,8 @@ The two videos below present the outcome of the dihedral angle validation proces
 	<video src="https://github.com/user-attachments/assets/184d6711-5ed7-45d3-8e08-ce8fa22dbfb9" controls width="600"></video>
 </div>
 <br><br><br>
-**Discussion**
 
 Overall, the GAFF2 bonded parameters are considered reliable. For the first dihedral, the QM global energy minimum corresponds to the most populated angle in the MD simulation, indicating good agreement between the QM and MD-derived profiles.
-
 For the second dihedral , however, the most populated angle in the MD simulation outcome corresponds to the starting structure's dihedral value rather than the QM energy minimum. This result is not surprised as the simulated system need time to get out of the local energy minima to discover lower energy state.
 
 ### 2. Water–Octanol Partitioning
