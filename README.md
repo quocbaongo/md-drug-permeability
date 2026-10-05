@@ -119,20 +119,24 @@ where
 - $$K_{p}$$ is the permeability coefficient.
 <br>
 <br>
-Below present the evolution of free energy profile and local diffusion coefficient profile throughout the simulation time
+
+
+Passive permeation through lipid bilayers membrane is a rare event, and the main rate-limiting step is simulated molecules being flip-flop inside the membrane and their entry/exit at the headgroup interface. Unbiased MD simulation (see below), might not sample sufficient permeation of simulated molecules within practical timescales.
+<br>
+<br>
+
+<p align="center"><strong> Second Dihedral Validation </strong></p>
+<div align="center">
+	<video src="https://github.com/user-attachments/assets/df0e4e8b-847c-4395-8639-0f8251c5023f" controls width="600"></video>
+</div>
 
 
 
-https://github.com/user-attachments/assets/df0e4e8b-847c-4395-8639-0f8251c5023f
 
 
 
 
 
-https://github.com/user-attachments/assets/80f57717-cf14-4ff6-ad3f-0827a14a3e99
-
-
-https://github.com/user-attachments/assets/c3510ea3-05b1-4ffa-8d89-808f708c592b
 
 <br>
 Sampled drug conformations when its non-bonded interactions are fully ON are shown at different positions relative to the membrane: bulk water, membrane–water interface (adsorption), and inside membrane. Note that the simulation box is ~12 nm along z-direction, with the membrane spanning between z = 4–8 nm. Structures shown are the dominant conformations from RMSD clustering pooled across 20 AWH walkers.
