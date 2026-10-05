@@ -123,13 +123,15 @@ where
 
 Passive permeation through lipid bilayers membrane is a rare event, and the main rate-limiting step is simulated molecules being flip-flop inside the membrane and their entry/exit at the headgroup interface. Unbiased MD simulation (see below), might not sample sufficient permeation of simulated molecules within practical timescales.
 <br>
-<br>
 
 <p align="center"><strong> Second Dihedral Validation </strong></p>
 <div align="center">
-	<video src="https://github.com/user-attachments/assets/df0e4e8b-847c-4395-8639-0f8251c5023f" controls width="600"></video>
+	<video src="https://github.com/user-attachments/assets/df0e4e8b-847c-4395-8639-0f8251c5023f" controls width="200"></video>
 </div>
+<br>
 
+Unbiased ATMD simulations of drug molecule permeating lipid bilayer membrane. In total, ~ 4000ns of unbiased ATMD simulation (10 replications and 400 ns each) was conducted. Still, no permeation event could be observed. Note: sudden jump of drug molecule's z-position across the membrane from one end of the simulation box
+to the other end is due to implementation of periodic boundary condition for approximating a large (infinite) system in MD simulation code. The underlying idea of the algorithm is that after an object passes through one side of the cell, it reappears on the opposite side with the same velocity. The lipid bilayer spans from 4-8 nm in z-direction​. Original video is compressed to 10Mb to ful-fill GitHub requirement, check [OneDrive link](https://1drv.ms/v/c/7232c20154625746/IQDwyWRYEu4SQL7LPFkHT72xAR2gNRuuVjhe5zOp5wE3vzU?e=dlfy2T)
 
 
 
