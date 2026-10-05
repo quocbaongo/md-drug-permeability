@@ -147,7 +147,7 @@ Enhanced sampling method Accelerated Weight Histogram (AWH) algorithm was used t
 (C) evolution of position-dependent potential of mean force (PMF) profile,
 (D) Evolution of position-dependent diffusivity profile.​
 
-The lipid bilayer spans from 4-8 nm in z-direction​. The permeability coefficient of simulated drug can be obtained using the Inhomogeneous solubility-diffusion (ISD) model, which integrates the PMF profile in (C) and position dependent diffusivity profile in (D). Original video is compressed to 10Mb to ful-fill GitHub requirement, check [OneDrive link](https://1drv.ms/v/c/7232c20154625746/IQBWu0Kex-KBS4UXXdRDqFVwAaBBvI2Y6QyfafIDgkjLoHE?e=6UXV2a) for original video.
+The lipid bilayer spans from 4-8 nm in z-direction​. The permeability coefficient of simulated drug can be obtained using the Inhomogeneous solubility-diffusion (ISD) model, which integrates the PMF profile in (C) and position dependent diffusivity profile in (D). Original video is compressed to 10Mb to ful-fill GitHub requirement, check [OneDrive link](https://1drv.ms/v/c/7232c20154625746/IQBWu0Kex-KBS4UXXdRDqFVwAaBBvI2Y6QyfafIDgkjLoHE?e=U0blV0) for original video.
 
 
 <br>
