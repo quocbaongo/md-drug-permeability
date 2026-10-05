@@ -122,6 +122,13 @@ where
 Below present the evolution of free energy profile and local diffusion coefficient profile throughout the simulation time
 
 
+
+https://github.com/user-attachments/assets/df0e4e8b-847c-4395-8639-0f8251c5023f
+
+
+
+
+
 https://github.com/user-attachments/assets/80f57717-cf14-4ff6-ad3f-0827a14a3e99
 
 
