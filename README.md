@@ -137,7 +137,7 @@ Enhanced sampling method Accelerated Weight Histogram (AWH) algorithm was used t
 
 <p align="center"><strong> AWH MD simulation of drug permeating membrane </strong></p>
 <div align="center">
-	<video src="https://github.com/user-attachments/assets/937e0cee-af87-47ad-8b3d-2f279a1e27e6" controls width="200"></video>
+	<video src="https://github.com/user-attachments/assets/937e0cee-af87-47ad-8b3d-2f279a1e27e6" controls width="600"></video>
 </div>
 <br>
 
