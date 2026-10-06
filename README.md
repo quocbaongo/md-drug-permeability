@@ -141,18 +141,11 @@ Enhanced sampling method Accelerated Weight Histogram (AWH) algorithm was used t
 </div>
 <br>
 
-(A) Simulation trajectory of an AWH walker, <br />
-(B) the recorded z-positions of drug’s center of mass over the simulation shown in (A), <br />
-(C) evolution of position-dependent potential of mean force (PMF) profile, <br />
-(D) Evolution of position-dependent diffusivity profile.​
-
-The lipid bilayer spans from 4-8 nm in z-direction​. The permeability coefficient of simulated drug can be obtained using the Inhomogeneous solubility-diffusion (ISD) model, which integrates the PMF profile in (C) and position dependent diffusivity profile in (D). Original video is compressed to 10Mb to ful-fill GitHub requirement, check [OneDrive link](https://1drv.ms/v/c/7232c20154625746/IQBWu0Kex-KBS4UXXdRDqFVwAaBBvI2Y6QyfafIDgkjLoHE?e=U0blV0) for original video.
+(A) Simulation trajectory of an AWH walker, (B) The recorded z-positions of drug’s center of mass over the simulation shown in (A), (C) Evolution of position-dependent potential of mean force (PMF) profile, and (D) evolution of position-dependent diffusivity profile.​ The permeability coefficient of simulated drug can be obtained using the Inhomogeneous solubility-diffusion (ISD) model, which integrates the PMF profile in (C) and position dependent diffusivity profile in (D). The lipid bilayer spans from 4-8 nm in z-direction​. Original video is compressed to 10Mb to ful-fill GitHub requirement, check [OneDrive link](https://1drv.ms/v/c/7232c20154625746/IQBWu0Kex-KBS4UXXdRDqFVwAaBBvI2Y6QyfafIDgkjLoHE?e=U0blV0) for original video.
 
 
 <br>
-Sampled drug conformations when its non-bonded interactions are fully ON are shown at different positions relative to the membrane: bulk water, membrane–water interface (adsorption), and inside membrane. Note that the simulation box is ~12 nm along z-direction, with the membrane spanning between z = 4–8 nm. Structures shown are the dominant conformations from RMSD clustering pooled across 20 AWH walkers.
-
-
+Finally, sampled drug conformations when its non-bonded interactions are fully ON are shown at different positions relative to the membrane: bulk water, membrane–water interface (adsorption), and inside membrane. Note that the simulation box is ~12 nm along z-direction, with the membrane spanning between z = 4–8 nm. Structures shown are the dominant conformations from RMSD clustering pooled across 20 AWH walkers.
 
 https://github.com/user-attachments/assets/6f6e666c-0341-4989-889e-655da50b9ea5
 
