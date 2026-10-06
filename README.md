@@ -133,7 +133,7 @@ In total, ~ 4000ns of unbiased ATMD simulations (10 repetitions and 400 ns for e
 
 <br>
 
-Enhanced sampling method Accelerated Weight Histogram (AWH) algorithm was used to flatten underlying free energy barriers due to the membrane and enable multiple permeation events within a single simulation.
+Enhanced sampling method Accelerated Weight Histogram (AWH) algorithm was used to flatten underlying free energy barriers due to the membrane and enable multiple permeation events of drug molecule within a single (or few multi-walker) simulation(s).
 
 <p align="center"><strong> AWH MD simulation of drug permeating membrane </strong></p>
 <div align="center">
