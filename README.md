@@ -129,8 +129,7 @@ Passive permeation through lipid bilayers membrane is a rare event, and the main
 </div>
 <br>
 
-Unbiased ATMD simulations of drug molecule permeating lipid bilayer membrane. In total, ~ 4000ns of unbiased ATMD simulation (10 replications and 400 ns each) was conducted. Still, no permeation event could be observed. Note: sudden jump of drug molecule's z-position across the membrane from one end of the simulation box
-to the other end is due to implementation of periodic boundary condition for approximating a large (infinite) system in MD simulation code. The underlying idea of the algorithm is that after an object passes through one side of the cell, it reappears on the opposite side with the same velocity. The lipid bilayer spans from 4-8 nm in z-direction​. Original video is compressed to 10Mb to ful-fill GitHub requirement, check [OneDrive link](https://1drv.ms/v/c/7232c20154625746/IQDwyWRYEu4SQL7LPFkHT72xAXyQa-e_Zetd6ra1fwxpBXc?e=mdobNg) for original video.
+In total, ~ 4000ns of unbiased ATMD simulations (10 repetitions and 400 ns for each repetition) were conducted. Still, no permeation event could be observed. Note that sudden jump of drug molecule's z-position across the membrane from one end of the simulation box to the other end was due to the implementation of periodic boundary condition for approximating a large (infinite) system in MD simulation code. The idea of the algorithm is that after an object passes through one side of the cell, it reappears on the opposite side with the same velocity. The lipid bilayer spans from 4-8 nm in z-direction​. Original video is compressed to 10Mb to ful-fill GitHub requirement, check [OneDrive link](https://1drv.ms/v/c/7232c20154625746/IQDwyWRYEu4SQL7LPFkHT72xAXyQa-e_Zetd6ra1fwxpBXc?e=mdobNg) for original video.
 
 <br>
 
