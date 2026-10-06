@@ -125,7 +125,7 @@ Passive permeation through lipid bilayers membrane is a rare event, and the main
 
 <p align="center"><strong> Unbiased MD simulation of drug permeating membrane </strong></p>
 <div align="center">
-	<video src="https://github.com/user-attachments/assets/df0e4e8b-847c-4395-8639-0f8251c5023f" controls width="200"></video>
+	<video src="https://github.com/user-attachments/assets/df0e4e8b-847c-4395-8639-0f8251c5023f" controls width="600"></video>
 </div>
 <br>
 
